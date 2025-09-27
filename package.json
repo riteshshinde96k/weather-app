@@ -6,12 +6,7 @@
   "scripts": {
     "start": "live-server --port=3000",
     "dev": "live-server --port=3000 --watch=.",
-    "build": "echo 'Static files are ready for deployment'"
-  },
-  "vercel": {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html" }
-    ]
+    "build": "echo 'Static site ready'"
   },
   "engines": {
     "node": ">=14.x"
