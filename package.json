@@ -8,6 +8,11 @@
     "dev": "live-server --port=3000 --watch=.",
     "build": "echo 'Static files are ready for deployment'"
   },
+  "vercel": {
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/index.html" }
+    ]
+  },
   "engines": {
     "node": ">=14.x"
   },
