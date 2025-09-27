@@ -3,7 +3,7 @@
 A clean and modern **single-page weather application** built with **vanilla JavaScript**, featuring real-time weather data, a 5-day forecast, and a responsive design.
 
 
-[🌍 Live Demo](https://weather-app-alpha-rose-27.vercel.app/)
+[🌍 Live Demo](weather-app-one-gilt.vercel.app)
 
 ---
 
