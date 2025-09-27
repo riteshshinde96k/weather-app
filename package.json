@@ -6,7 +6,10 @@
   "scripts": {
     "start": "live-server --port=3000",
     "dev": "live-server --port=3000 --watch=.",
-    "build": "echo 'No build process needed for vanilla JS'"
+    "build": "echo 'Static files are ready for deployment'"
+  },
+  "engines": {
+    "node": ">=14.x"
   },
   "keywords": ["weather", "javascript", "spa", "responsive"],
   "author": "Weather App Developer",

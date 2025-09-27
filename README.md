@@ -7,6 +7,12 @@ A clean and modern **single-page weather application** built with **vanilla Java
 
 ---
 
+## 📽️ Video 
+
+👉 [Watch on video](https://youtu.be/jE8e1orhch0?si=33q4deMQdYSGUh73)
+
+---
+
 ## 📋 Overview
 
 This app demonstrates modern web development practices without frameworks. It allows users to search any city worldwide and view **current weather conditions** and an **extended 5-day forecast**.
@@ -138,12 +144,6 @@ Visit `http://localhost:3000/test.html` to:
 * Weather maps integration
 * Historical data
 * PWA offline support
-
----
-
-## 📽️ Walkthrough Video *(Optional)*
-
-👉 [Watch on Loom](https://www.loom.com/share/your-video-link)
 
 ---
 
