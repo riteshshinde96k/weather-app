@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App 🌤️</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1 class="app-title">
+                <i class="fas fa-cloud-sun"></i>
+                Weather App
+            </h1>
+            <p class="app-subtitle">Get current weather and 5-day forecast for any city</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        class="city-input" 
+                        placeholder="Enter city name..."
+                        autocomplete="off"
+                    >
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="last-searched" id="lastSearched" style="display: none;">
+                    <span class="last-searched-text">Last searched: </span>
+                    <button class="last-searched-btn" id="lastSearchedBtn"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div class="loading-container" id="loadingContainer" style="display: none;">
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <p class="loading-text">Fetching weather data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-container" id="errorContainer" style="display: none;">
+            <div class="error-content">
+                <i class="fas fa-exclamation-triangle error-icon"></i>
+                <h3 class="error-title">Oops! Something went wrong</h3>
+                <p class="error-message" id="errorMessage"></p>
+                <button class="retry-btn" id="retryBtn">
+                    <i class="fas fa-redo"></i>
+                    Try Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Weather Display Section -->
+        <section class="weather-section" id="weatherSection" style="display: none;">
+            <!-- Current Weather Card -->
+            <div class="weather-card current-weather">
+                <div class="weather-header">
+                    <div class="location-info">
+                        <h2 class="city-name" id="cityName"></h2>
+                        <p class="country-name" id="countryName"></p>
+                        <p class="date-time" id="dateTime"></p>
+                    </div>
+                    <div class="weather-icon-container">
+                        <img class="weather-icon" id="weatherIcon" alt="Weather icon">
+                    </div>
+                </div>
+                
+                <div class="weather-main">
+                    <div class="temperature-display">
+                        <span class="temperature" id="temperature"></span>
+                        <span class="temperature-unit">°C</span>
+                    </div>
+                    <div class="weather-description">
+                        <p class="condition" id="weatherCondition"></p>
+                        <p class="feels-like">Feels like <span id="feelsLike"></span>°C</p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-tint detail-icon"></i>
+                        <div class="detail-content">
+                            <span class="detail-label">Humidity</span>
+                            <span class="detail-value" id="humidity"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind detail-icon"></i>
+                        <div class="detail-content">
+                            <span class="detail-label">Wind Speed</span>
+                            <span class="detail-value" id="windSpeed"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-eye detail-icon"></i>
+                        <div class="detail-content">
+                            <span class="detail-label">Visibility</span>
+                            <span class="detail-value" id="visibility"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-thermometer-half detail-icon"></i>
+                        <div class="detail-content">
+                            <span class="detail-label">Pressure</span>
+                            <span class="detail-value" id="pressure"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast Toggle -->
+            <div class="forecast-toggle">
+                <button class="toggle-btn active" id="currentBtn">Current</button>
+                <button class="toggle-btn" id="forecastBtn">5-Day Forecast</button>
+            </div>
+
+            <!-- 5-Day Forecast -->
+            <div class="forecast-container" id="forecastContainer" style="display: none;">
+                <h3 class="forecast-title">5-Day Weather Forecast</h3>
+                <div class="forecast-grid" id="forecastGrid">
+                    <!-- Forecast items will be dynamically generated -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2025 Weather App. Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/config.js"></script>
+    <script src="js/utils/StateManager.js"></script>
+    <script src="js/services/WeatherService.js"></script>
+    <script src="js/components/SearchBar.js"></script>
+    <script src="js/components/WeatherDisplay.js"></script>
+    <script src="js/components/ForecastDisplay.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
